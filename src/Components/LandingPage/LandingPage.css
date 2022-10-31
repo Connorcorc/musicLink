@@ -1,0 +1,12 @@
+.landing {
+    height: 100vh;
+    width: 100vw;
+    color:aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selector {
+    color: black;
+}
