@@ -1,9 +1,15 @@
 # Pull Request
 - [ ] New feature (adds functionality)
+- [ ] Refactor
+
 ### Summary:
+
+
 ### Please describe the tests that you ran to verify your changes.
 - [ ] I tested my changes in the browser
 - [ ] I tested with Cypress
+
+
 ### Checklist:
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
@@ -12,4 +18,6 @@
 - [ ] My changes generate no new bugs
 - [ ] I have added tests that prove my fix is effective or that my feature works
 - [ ] New and existing unit tests pass locally with my changes
+
+
 ### Any other comments, questions or concerns?
