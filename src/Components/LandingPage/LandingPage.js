@@ -5,19 +5,23 @@ class LandingPage extends Component {
     constructor() {
         super()
         this.state={
-
+          genreChoice: ''
         }
     }
-    
+
+    handleChange = event => {
+      this.setState({ [event.target.name]: event.target.value})
+    }
+
     render() {
+      console.log(this.state)
         return(
             <div className="landing">
                 <h1>Placeholder logo text</h1>
                 <form className='selector'>
                     <h1>How do you want to vibe today?</h1>
-                    <label for="genres">Choose a genre:</label>
-
-                    <select name="genres" id="genres">
+                    <label htmlFor="genres">Choose a genre:</label>
+                    <select onChange={this.handleChange} name="genreChoice" id="genres">
                     <option name="all" value="all">All Genres</option>
                     <option name="pop" value="pop">Pop</option>
                     <option name="rock" value="rock">Rock</option>
@@ -40,7 +44,7 @@ class LandingPage extends Component {
                     <option name="blues" value="blues">Blues</option>
                     </select>
 
-                    <button className="select" onClick="">Select</button>
+                    <button className="select" onClick="">Go</button>
                 </form>
             </div>
         )
