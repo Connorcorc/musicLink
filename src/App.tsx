@@ -3,6 +3,7 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from './Components/MainPage/MainPage';
+import jam from './images/raspberry-jam.jpg'
 
 class App extends Component {
   constructor() {
@@ -13,13 +14,13 @@ class App extends Component {
     }
   }
 
-  setGenre = (genre) => {
+  setGenre = (genre: string) => {
     this.setState({musicGenre: genre})
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ backgroundImage: `url(${jam})`, backgroundSize: "cover" }} >
         <Routes>
           <Route path='/' element={<LandingPage setGenre={this.setGenre}/>}/>
           <Route path='/main' element={<MainPage musicGenre={this.state.musicGenre} randomTracks={this.state.randomTracks}/>}/>
