@@ -1,16 +1,31 @@
 import React, { Component } from "react";
+import "./MainPage.css"
 
-export class MainPage extends Component {
-  constructor() {
-    super()
-    this.state = {
+type MainPageState = {
+  randomTracks: {}[],
+  // queue: {}[]
+}
 
-    }
+type MainPageProps = {
+  randomTracks: {}[]
+}
+
+export class MainPage extends Component<MainPageState, MainPageProps> {
+  state: MainPageState = {
+    randomTracks: [],
+    // queue: []
   }
-
+  
   render() {
     return(
-      <>{this.props.musicGenre}</>
+      <main className="mainPage">
+        <div className="player">
+        <p>PLAYER</p>
+        </div>
+        <div className="randomSong">
+        <p>RANDOM TRACKS</p>
+        </div>
+      </main>
     )
   }
 }

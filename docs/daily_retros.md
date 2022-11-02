@@ -59,3 +59,34 @@ Wins:
     - Connor: 
     - Will: 
     - Dani:
+
+
+
+## Wednesday 10/31/2022
+Today we:
+    - Took time to research more about TypeScript (going through the Scrimba course) superr 
+    - and will begin conversation around how we will want to implement TS into our project
+
+To Do:
+    - Route our TS implementation
+    - Build our Wireframe
+    - Plan Iterations
+    - Walk through API in depth - Will want to see what genres can actually be pulled up
+
+Thoughts:
+    - Catalyst: 
+    - Connor: Loading page
+    - Will: 
+    - Dani: 
+
+Challenges:
+    - Catalyst: 
+    - Connor: 
+    - Will: 
+    - Dani:
+
+Wins:
+    - Catalyst: 
+    - Connor: 
+    - Will: 
+    - Dani:
