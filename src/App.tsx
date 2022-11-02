@@ -4,15 +4,19 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from './Components/MainPage/MainPage';
 import jam from './images/raspberry-jam.jpg'
+import { JamObject } from './types/jamObject';
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      musicGenre: '',
-      randomTracks: []
-    }
+type AppState = {
+  musicGenre: string;
+  randomTracks: JamObject[]
+}
+
+class App extends Component<AppState> {
+  state = {
+    musicGenre: '',
+    randomTracks: []
   }
+
 
   setGenre = (genre: string) => {
     this.setState({musicGenre: genre})
