@@ -1,13 +1,16 @@
 import React, {Component, ChangeEvent} from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css"
+import { fetchTracks } from '../../api-calls';
 
 type LandingPageProps = {
-  setGenre: (genre: string) => void
+  setGenre: (genre: string) => void,
+  addTracks: (data: {}[]) => void
 }
 
 type LandingPageState = {
   genreChoice: string
+
 }
 
 class LandingPage extends Component<LandingPageProps, LandingPageState> {
@@ -19,8 +22,22 @@ class LandingPage extends Component<LandingPageProps, LandingPageState> {
     this.setState({ genreChoice: event.target.value})
   }
 
-  passGenreToApp = () => {
-    this.props.setGenre(this.state.genreChoice)
+  callTracks = () => {
+    fetchTracks(this.state.genreChoice)
+    .then(data => {
+      console.log(data.results);
+      this.props.addTracks(data.results);
+    })
+    .catch(err => console.log(err))
+  }
+
+  componentDidMount() {
+    fetchTracks(this.state.genreChoice)
+    .then(data => {
+      console.log(data.results);
+      this.props.addTracks(data.results);
+    })
+    .catch(err => console.log(err))
   }
 
   render() {
@@ -55,7 +72,7 @@ class LandingPage extends Component<LandingPageProps, LandingPageState> {
             <option value="blues">Blues</option>
           </select>
           <Link to='/main'>
-            {this.state.genreChoice && <button type="button" className="select" onClick={this.passGenreToApp}>Go</button>}
+            {this.state.genreChoice && <button type="button" className="select" onClick={this.callTracks}>Go</button>}
           </Link>
         </form>
       </div>
