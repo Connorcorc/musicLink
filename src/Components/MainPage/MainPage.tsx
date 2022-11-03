@@ -5,7 +5,8 @@ import RandomSongs from './RandomSongs/RandomSongs'
 
 type MainPageState = {
   randomTracks: {}[],
-  // queue: {}[]
+  queue: {}[],
+  nowPlaying: {}[]
 }
 
 type MainPageProps = {
@@ -19,7 +20,15 @@ type MainPageProps = {
 export class MainPage extends Component<MainPageState, MainPageProps> {
   state: MainPageState = {
     randomTracks: this.props.randomTracks,
-    // queue: []
+    queue: [],
+    nowPlaying: []
+  }
+
+  addToQueue = (id) => {
+    console.log('event', id)
+    const selectedTrack = this.state.randomTracks.find(track => track.id === id)
+    console.log(selectedTrack)
+    this.setState({queue: [selectedTrack]})
   }
 
   // getNewRandom = () => {
@@ -45,10 +54,10 @@ export class MainPage extends Component<MainPageState, MainPageProps> {
     const track = this.props.randomTracks.map(randomTrack => {
 
       return (
-        <RandomSongs artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
+        <RandomSongs id={randomTrack.id} artist={randomTrack.artist_name} title={randomTrack.name} addToQueue={this.addToQueue} audio={randomTrack.audio} key={randomTrack.id} /> )
 
     })
-    console.log(track)
+    console.log('queue render', this.state.queue)
     return(
 
       <main className="mainPage">
