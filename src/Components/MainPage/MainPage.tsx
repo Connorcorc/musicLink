@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./MainPage.css"
 import { fetchTracks } from '../../api-calls';
-import Track from '../Track/Track'
+import RandomSongs from './RandomSongs/RandomSongs'
 
 type MainPageState = {
   randomTracks: {}[],
@@ -11,8 +11,10 @@ type MainPageState = {
 type MainPageProps = {
   randomTracks: {}[]
 }
-let singleTrack: {}
-let songInformation;
+
+// hook syntax
+// const [randomTracks, setRandomTracks]
+// randomTracks = this.props.randomTracks
 
 export class MainPage extends Component<MainPageState, MainPageProps> {
   state: MainPageState = {
@@ -43,7 +45,7 @@ export class MainPage extends Component<MainPageState, MainPageProps> {
     const track = this.props.randomTracks.map(randomTrack => {
 
       return (
-        <Track artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
+        <RandomSongs artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
 
     })
     console.log(track)
@@ -51,10 +53,10 @@ export class MainPage extends Component<MainPageState, MainPageProps> {
 
       <main className="mainPage">
         <div className="player">
-          {track}
+          
         </div>
         <div className="randomSong">
-        <p>RANDOM TRACKS</p>
+        {track}
         </div>
       </main>
     )
