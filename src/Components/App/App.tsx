@@ -28,11 +28,12 @@ class App extends Component<AppState> {
   }
 
   render() {
+    console.log(this.state.randomTracks)
     return (
       <div className="App" >
         <Routes>
           <Route path='/' element={<LandingPage setGenre={this.setGenre} addTracks={this.addTracks}/>}/>
-          <Route path='/main' element={<MainPage randomTracks={this.state.randomTracks}/>}/>
+          {this.state.randomTracks.length > 0 && <Route path='/main' element={<MainPage randomTracks={this.state.randomTracks}/>}/>}
         </Routes>
       </div>
     );

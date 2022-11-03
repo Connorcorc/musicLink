@@ -31,15 +31,6 @@ class LandingPage extends Component<LandingPageProps, LandingPageState> {
     .catch(err => console.log(err))
   }
 
-  componentDidMount() {
-    fetchTracks(this.state.genreChoice)
-    .then(data => {
-      console.log(data.results);
-      this.props.addTracks(data.results);
-    })
-    .catch(err => console.log(err))
-  }
-
   render() {
     console.log(this.state)
     return(
