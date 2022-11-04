@@ -90,3 +90,33 @@ Wins:
     - Connor: 
     - Will: 
     - Dani:
+
+
+## Thursday 10/31/2022
+Today we:
+    - Took time to research more about TypeScript (going through the Scrimba course) superr 
+    - and will begin conversation around how we will want to implement TS into our project
+
+To Do:
+    - Route our TS implementation
+    - Build our Wireframe
+    - Plan Iterations
+    - Walk through API in depth - Will want to see what genres can actually be pulled up
+
+Thoughts:
+    - Catalyst: When we add a track to queue do we want to delete that track? 
+    - Connor: Loading page
+    - Will: When we add the track to queue, do we want to gray out that track/queue button to disable it?
+    - Dani: When a user checks off multiple tracks and then presses "add to queue and refresh" do we just refresh genre random tracks and add selected tracks to queue?
+
+Challenges:
+    - Catalyst: 
+    - Connor: 
+    - Will: 
+    - Dani:
+
+Wins:
+    - Catalyst: 
+    - Connor: 
+    - Will: 
+    - Dani:

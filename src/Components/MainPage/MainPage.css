@@ -1,27 +1,38 @@
 .player {
     border: 5px solid black;
-    height: 20vh;
-    width: 20vw;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
+    height: 30vw;
+    width: 40vw;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: auto;
   }
 
   .randomSong {
-    margin: 50px;
     border: 5px solid black;
-    height: 20vw;
-    width: 20vw;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
+    height: 30vw;
+    width: 40vw;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: auto;
   }
 
   .mainPage {
+    background-color: var(--main-clr);
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
   }
+
+  /* .queue-track-container {
+
+  } */

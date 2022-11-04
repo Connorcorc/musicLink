@@ -1,0 +1,17 @@
+.track-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+h3 {
+    font-size: .8rem;
+    margin-left: 1rem;
+}
+
+p {
+    font-size: .8rem;
+}
