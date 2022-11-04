@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./MainPage.css"
 import RandomTrack from './RandomTrack/RandomTrack'
 import QueueTrack from "./QueueTrack/QueueTrack";
-import {JamObject, JamObject as randomTrack} from '../../types/JamObject'
+import { JamObject } from '../../types/JamObject'
 
 type MainPageProps = {
-  randomTracks: randomTrack[],
+  randomTracks: JamObject[],
 }
 
 export const MainPage = ({randomTracks}: MainPageProps) => {
@@ -13,7 +13,7 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
   
     const addToQueue = (id: string) => {
       const trackToQueue = randomTracks.find(track => track.id === id);
-      setQueue([...queue, trackToQueue]);
+      setQueue([...queue, trackToQueue!]);
     }
 
     const tracks = randomTracks.map(randomTrack => {
