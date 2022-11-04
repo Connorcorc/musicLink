@@ -10,8 +10,6 @@ type LandingPageProps = {
   addTracks: (data: JamObject[]) => void
 }
 
-
-
 const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
   const [genreChoice, setGenreChoice] = useState<string>('')
   
