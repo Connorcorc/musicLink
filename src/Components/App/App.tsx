@@ -3,41 +3,32 @@ import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from '../MainPage/MainPage';
-import { JamObject } from '../../types/jamObject';
+import { JamObject } from '../../types/JamObject';
 import { fetchTracks } from '../../api-calls';
+import { useState } from 'react';
 
-type AppState = {
-  musicGenre: string;
-  randomTracks: JamObject[]
-}
+const App = () => {
+  const [musicGenre, setMusiceGenre] = useState<string>('')
+  const [randomTracks, setRandomTracks] = useState<JamObject[]>([])
 
-class App extends Component<AppState> {
-  state: AppState = {
-    musicGenre: '',
-    randomTracks: []
+  const setGenre = (genre: string) => {
+    setMusiceGenre(genre)
   }
 
-
-  setGenre = (genre: string) => {
-    this.setState({musicGenre: genre})
-  }
-
-  addTracks = (data: {}[]) => {
+  const addTracks = (data: JamObject[]) => {
     console.log("HERE====", data)
-    this.setState({randomTracks: data})
+    setRandomTracks(data)
   }
 
-  render() {
-    console.log(this.state.randomTracks)
-    return (
-      <div className="App" >
-        <Routes>
-          <Route path='/' element={<LandingPage setGenre={this.setGenre} addTracks={this.addTracks}/>}/>
-          {this.state.randomTracks.length > 0 && <Route path='/main' element={<MainPage randomTracks={this.state.randomTracks}/>}/>}
-        </Routes>
-      </div>
-    );
-  }
+  console.log(randomTracks)
+  return (
+    <div className="App" >
+      <Routes>
+        <Route path='/' element={<LandingPage setGenre={setGenre} addTracks={addTracks}/>}/>
+        {randomTracks.length > 0 && <Route path='/main' element={<MainPage randomTracks={randomTracks}/>}/>}
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
