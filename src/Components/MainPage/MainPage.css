@@ -11,11 +11,13 @@
   .randomSong {
     margin: 50px;
     border: 5px solid black;
-    height: 20vw;
-    width: 20vw;
+    height: 40vw;
+    width: 40vw;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: auto;
   }
 
   .mainPage {

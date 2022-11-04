@@ -1,18 +1,17 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from '../MainPage/MainPage';
 import { JamObject } from '../../types/JamObject';
-import { fetchTracks } from '../../api-calls';
-import { useState } from 'react';
+// import { fetchTracks } from '../../api-calls';
 
 const App = () => {
-  const [musicGenre, setMusiceGenre] = useState<string>('')
+  const [musicGenre, setMusicGenre] = useState<string>('')
   const [randomTracks, setRandomTracks] = useState<JamObject[]>([])
 
   const setGenre = (genre: string) => {
-    setMusiceGenre(genre)
+    setMusicGenre(genre)
   }
 
   const addTracks = (data: JamObject[]) => {
@@ -20,7 +19,7 @@ const App = () => {
     setRandomTracks(data)
   }
 
-  console.log(randomTracks)
+  console.log("Random Tracks in App====",randomTracks)
   return (
     <div className="App" >
       <Routes>
