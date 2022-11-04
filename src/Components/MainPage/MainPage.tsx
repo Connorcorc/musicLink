@@ -1,56 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./MainPage.css"
-import { fetchTracks } from '../../api-calls';
 import RandomTrack from './RandomTracks/RandomTrack'
 import {JamObject as randomTrack} from '../../types/JamObject'
 
-type MainPageState = {
-  randomTracks: {}[],
-  // queue: {}[]
-}
-
 type MainPageProps = {
-  randomTracks: {}[]
+  randomTracks: randomTrack[],
 }
 
-
-// hook syntax
-// const [randomTracks, setRandomTracks]
-// randomTracks = this.props.randomTracks
-
-export class MainPage extends Component<MainPageState, MainPageProps> {
-  state: MainPageState = {
-    randomTracks: this.props.randomTracks,
-    // queue: []
-  }
-
-  // getNewRandom = () => {
-  //   fetchTracks(this.props.genre)
-  //   .then(data => {
-  //     console.log(data.results);
-  //     this.props.addTracks(data.results);
-  //   })
-  //   .catch(err => console.log(err))
-  // }
-  // getIndividualTrack = () => {
-  //   const track = this.state.randomTracks.map(randomTrack => {
-  //     console.log(track);
-  //     singleTrack = <Track image={randomTrack.album_image} artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} id={randomTrack.id} key={randomTrack.id} />
-  //
-  //   })
-  //   return track
-  // }
-
-
-  render() {
-
-    const track = this.props.randomTracks.map(randomTrack => {
+export const MainPage = ({randomTracks}: MainPageProps) => {
+  
+    const tracks = randomTracks.map(randomTrack => {
 
       return (
-        <RandomTrack artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
+        <RandomTrack id={randomTrack.id} artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
 
     })
-    console.log(track)
+    console.log(tracks)
     return(
 
       <main className="mainPage">
@@ -58,9 +23,9 @@ export class MainPage extends Component<MainPageState, MainPageProps> {
           
         </div>
         <div className="randomSong">
-        {track}
+        {tracks}
         </div>
       </main>
     )
-  }
+  
 }

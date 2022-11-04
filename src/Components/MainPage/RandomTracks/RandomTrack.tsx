@@ -1,7 +1,7 @@
 import React from "react"
 import './RandomTrack.css'
 
-const RandomTrack = ({  artist, title, audio}) => {
+const RandomTrack = ({  id, artist, title, audio}: {id: string, artist: string, title: string, audio: string}) => {
   return (
     <div className="player">
       <h3>{artist}</h3>
