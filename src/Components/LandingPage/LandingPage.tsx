@@ -2,8 +2,8 @@ import React, { Component, ChangeEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css"
 import { fetchTracks } from '../../api-calls';
-import { JamObject } from "../../types/JamObject";
-import vibeStreet from '/Users/catalyst/Turing/Mod_3/musicLink/src/images/vibeStreet.jpg'
+import { JamObject } from '../../types/JamObject';
+import vibeStreet from '../../images/vibeStreet.jpg'
 
 
 
