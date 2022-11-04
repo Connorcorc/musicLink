@@ -1,7 +1,13 @@
 import React from "react"
 import './Track.css'
 
-const Track = ({  artist, title, audio}) => {
+type TrackProps = {
+  artist: string, 
+  title: string, 
+  audio:string
+}
+
+const Track = ({ artist, title, audio}: TrackProps) => {
   return (
     <div className="player">
       <h3>{artist}</h3>
