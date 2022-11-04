@@ -3,7 +3,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { MainPage } from '../MainPage/MainPage';
-import { JamObject } from '../../types/jamObject';
+import { JamObject } from '../../types/JamObject';
 import { fetchTracks } from '../../api-calls';
 import { useState } from 'react';
 

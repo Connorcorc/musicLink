@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./MainPage.css"
 import { fetchTracks } from '../../api-calls';
-import RandomSongs from './RandomSongs/RandomSongs'
+import RandomTrack from './RandomTracks/RandomTrack'
+import {JamObject as randomTrack} from '../../types/JamObject'
 
 type MainPageState = {
   randomTracks: {}[],
@@ -11,6 +12,7 @@ type MainPageState = {
 type MainPageProps = {
   randomTracks: {}[]
 }
+
 
 // hook syntax
 // const [randomTracks, setRandomTracks]
@@ -45,7 +47,7 @@ export class MainPage extends Component<MainPageState, MainPageProps> {
     const track = this.props.randomTracks.map(randomTrack => {
 
       return (
-        <RandomSongs artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
+        <RandomTrack artist={randomTrack.artist_name} title={randomTrack.name} audio={randomTrack.audio} key={randomTrack.id} /> )
 
     })
     console.log(track)

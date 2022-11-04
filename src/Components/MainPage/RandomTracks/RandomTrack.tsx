@@ -1,7 +1,7 @@
 import React from "react"
-import './RandomSongs.css'
+import './RandomTrack.css'
 
-const RandomSongs = ({  artist, title, audio}) => {
+const RandomTrack = ({  artist, title, audio}) => {
   return (
     <div className="player">
       <h3>{artist}</h3>
@@ -14,5 +14,5 @@ const RandomSongs = ({  artist, title, audio}) => {
   )
 }
 
-export default RandomSongs
+export default RandomTrack
 
