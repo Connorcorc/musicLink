@@ -3,6 +3,7 @@ import "./MainPage.css"
 import RandomTrack from './RandomTrack/RandomTrack'
 import QueueTrack from "./QueueTrack/QueueTrack";
 import { JamObject } from '../../types/JamObject'
+import BGvertical from '../../images/BGvertical.jpg'
 
 type MainPageProps = {
   randomTracks: JamObject[],
@@ -47,11 +48,12 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
     console.log("our Queue****", queue);
     console.log("QUEUEDUP****", queuedUp);
     return(
-      <main className="mainPage">
-        <div className="player">
+      <main className="mainPage" 
+      style={{ backgroundImage: `${BGvertical}`}}>
+        <div className="player display">
           {queuedUp}
         </div>
-        <div className="randomSong">
+        <div className="randomSong display">
         {tracks}
         </div>
       </main>

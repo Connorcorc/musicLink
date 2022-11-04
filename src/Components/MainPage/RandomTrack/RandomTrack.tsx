@@ -20,10 +20,10 @@ const RandomTrack = ({  id, artist, title, duration, audio, addToQueue}: RandomT
 
   return (
     <div className="track-container">
-      <h3>{artist}</h3>
+      <p>{artist}</p>
       <p>{title}</p>
       <p>{duration} sec</p>
-      <button onClick={() => handleQueue(id)}>add to queue</button>
+      <button onClick={() => handleQueue(id)} className='add-to-queue-button display'>add to queue</button>
       {/* <video controls className="media">
         <source src={audio} type="audio/mpeg"></source>
       </video> */}
