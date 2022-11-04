@@ -20,7 +20,6 @@ const RandomTrack = ({  id, artist, title, duration, audio, addToQueue}: RandomT
 
   return (
     <div className="track-container">
-
       <h3>{artist}</h3>
       <p>{title}</p>
       <p>{duration} sec</p>
@@ -32,5 +31,5 @@ const RandomTrack = ({  id, artist, title, duration, audio, addToQueue}: RandomT
   )
 }
 
-export default RandomTrack
+export default RandomTrack;
 
