@@ -49,7 +49,6 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
     return(
       <main className="mainPage">
         <div className="player">
-          {/* {queue.length > 0 && queuedUp}  */}
           {queuedUp}
         </div>
         <div className="randomSong">

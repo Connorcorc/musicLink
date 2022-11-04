@@ -11,7 +11,7 @@ type QueueProps = {
 const QueueTrack = ({id, artist, title, duration, audio}: QueueProps) => {
 
     return (
-        <div className="queue-track-contaner">
+        <div className="track-container">
             <h3>{artist}</h3>
             <p>{title}</p>
             <p>{duration}</p>
