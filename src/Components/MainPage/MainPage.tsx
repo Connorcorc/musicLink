@@ -60,16 +60,18 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
   console.log("our Queue****", queue);
   console.log("QUEUEDUP****", queuedUp);
   return(
-    <main className="mainPage" >
-      <div className="player display">
-        {queuedUp}
-      </div>
-      <div className="randomSong display">
-      {tracks}
-      </div>
+    <div>
       <div className="album-grid">
       {showAlbumGrid}
       </div>
-    </main>
+      <main className="mainPage" >
+        <div className="player display">
+          {queuedUp}
+        </div>
+        <div className="randomSong display">
+        {tracks}
+        </div>
+      </main>
+    </div>
   )
 }
