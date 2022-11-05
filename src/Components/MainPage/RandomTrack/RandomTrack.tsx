@@ -19,7 +19,7 @@ const RandomTrack = ({  id, artist, title, duration, audio, addToQueue}: RandomT
 
 
   return (
-    <div className="track-container">
+    <div className="track-container" data-cy="track-container">
       <h3>{artist}</h3>
       <p>{title}</p>
       <p>{duration} sec</p>
