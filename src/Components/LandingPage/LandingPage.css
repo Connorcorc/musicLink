@@ -15,7 +15,8 @@
 .vibe-choice {
     font-size: 2.5em;
     position: absolute;
-    top: 65%
+    top: 65%;
+    text-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
 }
 
 select {

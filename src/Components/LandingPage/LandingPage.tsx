@@ -6,7 +6,6 @@ import { JamObject } from '../../types/JamObject';
 import vibeStreet from '../../images/vibeStreet.jpg'
 
 
-
 type LandingPageProps = {
   setGenre: (genre: string) => void,
   addTracks: (data: JamObject[]) => void
