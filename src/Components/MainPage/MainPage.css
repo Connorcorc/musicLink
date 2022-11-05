@@ -1,9 +1,10 @@
 .mainPage {
   background-color:deepskyblue;
+  height: 100vh;
   width: 100vw;
-
+  overflow: auto;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
+  grid-template-columns: .5fr 3fr .5fr 5fr .5fr;
   grid-template-rows: .25fr 1fr .25fr;
   grid-template-areas: 
   '.   .    .    .   .'
@@ -35,14 +36,44 @@
 }
 
 .track-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
+  grid-template-areas: 
+  '. artist . title . duration . button .';
+
+  align-items: center;
   height: 3rem;
 }
 
 .track-container > p {
   font-size: 1em;
+  margin: 10px;
+}
+
+.track-artist {
+  grid-area: artist;
+}
+
+.track-title {
+  grid-area: title;
+}
+
+.track-duration {
+  grid-area: duration;
 }
 
 .add-to-queue-button {
-  height: ;
+  height: 25px;
+  min-width: 100px;
+  margin: 10px;
+  grid-area: button;
+}
+
+.album-grid {
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
