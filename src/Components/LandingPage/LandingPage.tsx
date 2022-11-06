@@ -66,9 +66,7 @@ const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
         </select>
         <span className="focus"></span>
       </div>
-        <Link to='/main'>
           {genreChoice && <button type="button" className="genre-select-button" onClick={callTracks}>VIBE</button>}
-        </Link>
     </div>
   )
 }
