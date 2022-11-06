@@ -9,9 +9,10 @@ import { useNavigate } from "react-router-dom";
 type MainPageProps = {
   randomTracks: JamObject[],
   setRandomTracks: (data: JamObject[]) => void
+  callTracks: (genre: string) => void
 }
 
-export const MainPage = ({randomTracks, setRandomTracks}: MainPageProps) => {
+export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPageProps) => {
   const [queue, setQueue] = useState<JamObject[]>([]);
   const [hasError, setError] = useState<string>("");
   const navigate = useNavigate();
@@ -59,22 +60,18 @@ export const MainPage = ({randomTracks, setRandomTracks}: MainPageProps) => {
     )
   })
 
-  const refreshRandomList = async (genre: string) => {
-    const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=10&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
-    setError("");
+  // const refreshRandomList = async (genre: string) => {
+  //   const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=10&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
+  //   setError("");
 
-    try {
-      const response = await fetch(url)
-      const data = await response.json()
-      setRandomTracks(data.results)
-    } catch(error: any) {
-      setError(error.message)
-    }
-  }
-
-  console.log("Random Tracks in MainPage",tracks)
-  console.log("our Queue****", queue);
-  console.log("QUEUEDUP****", queuedUp);
+  //   try {
+  //     const response = await fetch(url)
+  //     const data = await response.json()
+  //     setRandomTracks(data.results)
+  //   } catch(error: any) {
+  //     setError(error.message)
+  //   }
+  // }
   
   useEffect(() => {
     if (!randomTracks.length) {
@@ -86,7 +83,7 @@ export const MainPage = ({randomTracks, setRandomTracks}: MainPageProps) => {
     <div>
       <main className="mainPage" >
         <div className="album-grid">
-        {showAlbumGrid}
+          {showAlbumGrid}
         </div>
         <div className="player display">
           <video controls className="media">
