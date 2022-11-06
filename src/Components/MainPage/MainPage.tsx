@@ -61,10 +61,10 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
   console.log("QUEUEDUP****", queuedUp);
   return(
     <div>
-      <div className="album-grid">
-      {showAlbumGrid}
-      </div>
       <main className="mainPage" >
+        <div className="album-grid">
+        {showAlbumGrid}
+        </div>
         <div className="player display">
           {queuedUp}
         </div>
