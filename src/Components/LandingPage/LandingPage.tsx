@@ -4,6 +4,7 @@ import "./LandingPage.css"
 import { fetchTracks } from '../../api-calls';
 import { JamObject } from '../../types/JamObject';
 import vibeStreet from '../../images/vibeStreet.jpg'
+// import { GenreDropDown } from "../GenreDropDown/GenreDropDown";
 
 
 type LandingPageProps = {
@@ -14,7 +15,7 @@ type LandingPageProps = {
 const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
   const [genreChoice, setGenreChoice] = useState<string>('')
   
-  const handleChange = (event: ChangeEvent<HTMLSelectElement>)  => {
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGenreChoice(event.target.value)
   }
 
@@ -68,6 +69,7 @@ const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
         <Link to='/main'>
           {genreChoice && <button type="button" className="genre-select-button" onClick={callTracks}>VIBE</button>}
         </Link>
+        {/* <GenreDropDown handleChange={handleChange} /> */}
     </div>
   )
 }

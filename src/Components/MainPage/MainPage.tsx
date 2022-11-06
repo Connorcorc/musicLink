@@ -66,6 +66,9 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
         {showAlbumGrid}
         </div>
         <div className="player display">
+          <video controls className="media">
+            <source src={randomTracks[0].audio} type="audio/mpeg"></source>
+          </video>
           {queuedUp}
         </div>
         <div className="randomSong display">
