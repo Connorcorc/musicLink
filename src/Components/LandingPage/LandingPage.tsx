@@ -43,7 +43,6 @@ const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
         <label htmlFor="genres" className="hidden">Choose a genre: </label>
         <select onChange={handleChange} name="genreChoice" id="genres">
           <option value="">Choose a genre</option>
-          <option value="all">All Genres</option>
           <option value="pop">Pop</option>
           <option value="rock">Rock</option>
           <option value="electronic">Electronic</option>
