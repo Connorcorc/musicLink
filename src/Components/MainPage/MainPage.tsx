@@ -1,9 +1,8 @@
-import React, { useLayoutEffect, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./MainPage.css"
 import RandomTrack from './RandomTrack/RandomTrack'
 import QueueTrack from "./QueueTrack/QueueTrack";
 import { JamObject } from '../../types/JamObject'
-import BGvertical from '../../images/BGvertical.jpg'
 import AlbumGrid from "./AlbumGrid";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,4 @@
-import React, { Component, ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { ChangeEvent, useState } from "react";
 import "./LandingPage.css"
 import { fetchTracks } from '../../api-calls';
 import { JamObject } from '../../types/JamObject';
