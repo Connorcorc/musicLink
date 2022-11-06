@@ -1,17 +1,20 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MainPage.css"
 import RandomTrack from './RandomTrack/RandomTrack'
 import QueueTrack from "./QueueTrack/QueueTrack";
 import { JamObject } from '../../types/JamObject'
-import BGvertical from '../../images/BGvertical.jpg'
 import AlbumGrid from "./AlbumGrid";
+import { useNavigate } from "react-router-dom";
 
 type MainPageProps = {
   randomTracks: JamObject[],
+  setRandomTracks: (data: JamObject[]) => void
 }
 
-export const MainPage = ({randomTracks}: MainPageProps) => {
-  const [queue, setQueue] = useState<JamObject[]>([])
+export const MainPage = ({randomTracks, setRandomTracks}: MainPageProps) => {
+  const [queue, setQueue] = useState<JamObject[]>([]);
+  const [hasError, setError] = useState<string>("");
+  const navigate = useNavigate();
   const albumCovers: {image: string, id: string}[] = []
   
   const addToQueue = (id: string) => {
@@ -56,9 +59,29 @@ export const MainPage = ({randomTracks}: MainPageProps) => {
     )
   })
 
+  const refreshRandomList = async (genre: string) => {
+    const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=10&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
+    setError("");
+
+    try {
+      const response = await fetch(url)
+      const data = await response.json()
+      setRandomTracks(data.results)
+    } catch(error: any) {
+      setError(error.message)
+    }
+  }
+
   console.log("Random Tracks in MainPage",tracks)
   console.log("our Queue****", queue);
   console.log("QUEUEDUP****", queuedUp);
+  
+  useEffect(() => {
+    if (!randomTracks.length) {
+      navigate("/")
+    }
+  }, [navigate, randomTracks.length])
+
   return(
     <div>
       <main className="mainPage" >
