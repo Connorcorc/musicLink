@@ -83,16 +83,21 @@ export const MainPage = ({randomTracks, setRandomTracks}: MainPageProps) => {
   }, [navigate, randomTracks.length])
 
   return(
-    <main className="mainPage" >
-      <div className="player display">
-        {queuedUp}
-      </div>
-      <div className="randomSong display">
-      {tracks}
-      </div>
-      <div className="album-grid">
-      {showAlbumGrid}
-      </div>
-    </main>
+    <div>
+      <main className="mainPage" >
+        <div className="album-grid">
+        {showAlbumGrid}
+        </div>
+        <div className="player display">
+          <video controls className="media">
+            <source src={randomTracks[0].audio} type="audio/mpeg"></source>
+          </video>
+          {queuedUp}
+        </div>
+        <div className="randomSong display">
+        {tracks}
+        </div>
+      </main>
+    </div>
   )
 }

@@ -2,7 +2,11 @@ import React from "react";
 
 
 const AlbumGrid = ({albumCover}: {albumCover: string}) => {
-  return <img src={albumCover} />
+  return (
+    <span>
+      <img src={albumCover} />
+    </span>
+  )
 }
 
 export default AlbumGrid
