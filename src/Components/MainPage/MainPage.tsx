@@ -61,7 +61,7 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
   })
 
   // const refreshRandomList = async (genre: string) => {
-  //   const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=10&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
+  //   const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=50&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
   //   setError("");
 
   //   try {
@@ -85,12 +85,9 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
         <div className="album-grid">
           {showAlbumGrid}
         </div>
-        <div className="player display">
-          <video controls className="media">
+        <video controls className="media">
             <source src={randomTracks[0].audio} type="audio/mpeg"></source>
           </video>
-          {queuedUp}
-        </div>
         <div className="randomSong display">
         {tracks}
         </div>
