@@ -16,7 +16,7 @@
   background-color: rgb(255, 255, 255, 0.75);
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .5);
   width: 80vw;
-  height: 70vh;
+  height: 60vh;
   border-radius: 10px;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
   display: flex;
@@ -62,13 +62,13 @@
 
 .album-grid {
   width: 100vw;
+  height: 100vh;
   height: inherit;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   overflow-y: hidden;
-
 }
 
 .album-grid > span > img {
