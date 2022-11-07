@@ -1,31 +1,22 @@
-import React, { Component, ChangeEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { ChangeEvent, useState } from "react";
 import "./LandingPage.css"
-import { fetchTracks } from '../../api-calls';
 import { JamObject } from '../../types/JamObject';
 import vibeStreet from '../../images/vibeStreet.jpg'
-// import { GenreDropDown } from "../GenreDropDown/GenreDropDown";
 
 
 type LandingPageProps = {
-  setGenre: (genre: string) => void,
-  addTracks: (data: JamObject[]) => void
+  callTracks: (genre: string) => void
 }
 
-const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
+const LandingPage = ({callTracks}: LandingPageProps) => {
   const [genreChoice, setGenreChoice] = useState<string>('')
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGenreChoice(event.target.value)
   }
 
-  const callTracks = () => {
-    fetchTracks(genreChoice)
-    .then(data => {
-      console.log(data.results);
-      addTracks(data.results);
-    })
-    .catch(err => console.log(err))
+  const handleCall = () => {
+    callTracks(genreChoice);
   }
 
   console.log("landing page genreChoice:", genreChoice)
@@ -66,10 +57,7 @@ const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
         </select>
         <span className="focus"></span>
       </div>
-        <Link to='/main'>
-          {genreChoice && <button type="button" className="genre-select-button" onClick={callTracks}>VIBE</button>}
-        </Link>
-        {/* <GenreDropDown handleChange={handleChange} /> */}
+          {genreChoice && <button type="button" className="genre-select-button" onClick={handleCall}>VIBE</button>}
     </div>
   )
 }
