@@ -21,52 +21,23 @@
 
 select {
     appearance: none;
-    background-color: transparent;
-    border: none;
-    padding: 0 1em 0 0;
-    margin: 0;
-    width: 100%;
+    display: block;
+    padding: .25em .25em .25em .50em;
     font-family: inherit;
     font-size: inherit;
-    cursor: inherit;
-    line-height: inherit;
     outline: none;
     color: white;
-
-}
-
-.selector {
+    z-index: 1;
+    background-color: teal;
     border: 1px solid white;
     border-radius: 0.25em;
-    padding: 0.25em 0.5em;
     font-size: 1.5em;
     cursor: pointer;
-    line-height: 1.1;
-    background-color: teal;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    top: 80%;
-}
-
-.selector::after {
-    content: "";
-    width: 0.8em;
-    height: 0.5em;
-    background-color: white;
-    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-}
-
-.selector:focus + .focus {
     position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    border: 2px solid black;
-    border-radius: inherit;
+    top: 81%;
+    left: 37%;
 }
+
 
 .genre-select-button {
     padding: 0% 1%;

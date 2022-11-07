@@ -41,9 +41,9 @@ const LandingPage = ({setGenre, addTracks}: LandingPageProps) => {
       <h1 className="logo">Welcome to</h1>
       <h2 className="vibe-choice">How do you want to vibe today?</h2>
       <div className='selector'>
-        <label htmlFor="genres" className="hidden">Choose a genre: </label>
+        <label htmlFor="genres" className="hidden">Choose a genre:</label>
         <select onChange={handleChange} name="genreChoice" id="genres">
-          <option value="">Choose a genre</option>
+          <option value="">Choose a genre ▼</option>
           <option value="pop">Pop</option>
           <option value="rock">Rock</option>
           <option value="electronic">Electronic</option>
