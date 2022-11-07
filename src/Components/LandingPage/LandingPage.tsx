@@ -2,7 +2,6 @@ import React, { ChangeEvent, useState } from "react";
 import "./LandingPage.css"
 import { JamObject } from '../../types/JamObject';
 import vibeStreet from '../../images/vibeStreet.jpg'
-// import { GenreDropDown } from "../GenreDropDown/GenreDropDown";
 
 
 type LandingPageProps = {

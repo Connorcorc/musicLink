@@ -1,13 +1,9 @@
 .mainPage {
   width: 100vw;
   overflow: auto;
-  display: grid;
-  grid-template-columns: .5fr 3fr .5fr 5fr .5fr;
-  grid-template-rows: .25fr 1fr .25fr;
-  grid-template-areas: 
-  '.   .    .    .   .'
-  '. player . random .'
-  '.   .    .    .   .';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -22,12 +18,14 @@
 }
 
 .randomSong {
+  width: 60vw;
+  height: 60vh;
   border-radius: 10px;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: auto;
   grid-area: random;
 }
