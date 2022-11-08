@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import LandingPage from '../LandingPage/LandingPage';
 import './App.css';
 import { Route, Routes, useNavigate } from 'react-router-dom';
@@ -8,6 +8,10 @@ import { fetchTracks } from '../../api-calls';
 
 const App = () => {
   const [randomTracks, setRandomTracks] = useState<JamObject[]>([])
+  // hooks for controlled form - let's user's sort through music by:
+  //Relevance, Genre, Country
+  const [genre, setGenre] = useState<string>("");
+  const [sortBy, setSortBy] = useState<string>('')
   const navigate = useNavigate();
 
   const callTracks = (genre: string) => {
@@ -17,21 +21,34 @@ const App = () => {
       setRandomTracks(data.results);
       navigate("/main");
     })
-    .catch(err => console.log(err))
+    .catch(err => 
+      //navigate to error page (setup the conditional to render <div>)
+      console.log(err))
   }
 
-  console.log("Random Tracks in App====",randomTracks)
+  useEffect(() => {
+    if(genre.length){
+      callTracks(genre)
+    }
+  }, [genre])
   
   return (
     <div className="App" >
       <Routes>
         <Route path='/' element={
-          <LandingPage callTracks={callTracks}/>
+          <LandingPage 
+            callTracks={callTracks}
+            genre={genre}
+            setGenre={setGenre}/>
         }/>
         <Route path='/main' element={
           <MainPage 
             randomTracks={randomTracks} 
+            genre={genre}
+            sortBy={sortBy}
             setRandomTracks={setRandomTracks}
+            setGenre={setGenre}
+            setSortBy={setSortBy}
             callTracks={callTracks}
           />
         }/>
