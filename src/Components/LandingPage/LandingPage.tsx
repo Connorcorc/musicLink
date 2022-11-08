@@ -1,25 +1,17 @@
 import React, { ChangeEvent, useState } from "react";
 import "./LandingPage.css"
-import { JamObject } from '../../types/JamObject';
 import vibeStreet from '../../images/vibeStreet.jpg'
 
-
 type LandingPageProps = {
-  genre: string,
   setGenre: (data: string) => void,
-  callTracks: (genre: string) => void
 }
 
-const LandingPage = ({genre, setGenre, callTracks}: LandingPageProps) => {
+const LandingPage = ({setGenre}: LandingPageProps) => {
   const [genreChoice, setGenreChoice] = useState<string>('')
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGenreChoice(event.target.value)
   }
-
-  // const handleCall = () => {
-  //   callTracks(genreChoice);
-  // }
 
   console.log("landing page genreChoice:", genreChoice)
   return(

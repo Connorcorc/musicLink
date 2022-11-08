@@ -2,11 +2,9 @@ import React, { useState } from "react";
 
 type RefreshFormProps = {
   setGenre: (data: string) => void;
-  setSortBy: (data: string) => void;
 };
 
-export const RefreshForm = ({ setGenre, setSortBy }: RefreshFormProps) => {
-  const [selectedRelevance, setSelectedRelevance] = useState<string>("");
+export const RefreshForm = ({ setGenre}: RefreshFormProps) => {
   const [selectedGenre, setSelectedGenre] = useState<string>("");
 
   const newQuery = () => {
@@ -20,18 +18,6 @@ export const RefreshForm = ({ setGenre, setSortBy }: RefreshFormProps) => {
         <label htmlFor="genres" className="hidden">
           Choose a genre:
         </label>
-
-        <select
-          className="player-sort nav"
-          onChange={(event) => setSelectedRelevance(event.target.value)}
-          name="sortSelect"
-          id="sort"
-        >
-          <option value="">Sort by ▼</option>
-          <option value="bestOf">Best Of</option>
-          <option value="trending">Trending</option>
-          <option value="latest">Latest</option>
-        </select>
 
         <select
           className="player-genre nav"
