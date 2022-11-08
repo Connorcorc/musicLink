@@ -8,13 +8,17 @@ import { useNavigate } from "react-router-dom";
 
 type MainPageProps = {
   randomTracks: JamObject[],
-  setRandomTracks: (data: JamObject[]) => void
+  genre: string,
+  setRandomTracks: (data: JamObject[]) => void,
+  setGenre: (data: string) => void,
   callTracks: (genre: string) => void
 }
 
-export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPageProps) => {
+export const MainPage = ({randomTracks, genre, setRandomTracks, callTracks}: MainPageProps) => {
   const [queue, setQueue] = useState<JamObject[]>([]);
   const [hasError, setError] = useState<string>("");
+  const [nowPlaying, setNowPlaying] = useState<JamObject[]>([]);
+  
   const navigate = useNavigate();
   const albumCovers: {image: string, id: string}[] = []
   
@@ -38,8 +42,6 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
       /> 
     )
   })
-    
-  console.log(albumCovers);
   
   const showAlbumGrid = albumCovers.map(albumCover => {
     return (

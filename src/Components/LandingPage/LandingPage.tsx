@@ -5,19 +5,21 @@ import vibeStreet from '../../images/vibeStreet.jpg'
 
 
 type LandingPageProps = {
+  genre: string,
+  setGenre: (data: string) => void,
   callTracks: (genre: string) => void
 }
 
-const LandingPage = ({callTracks}: LandingPageProps) => {
+const LandingPage = ({genre, setGenre, callTracks}: LandingPageProps) => {
   const [genreChoice, setGenreChoice] = useState<string>('')
   
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setGenreChoice(event.target.value)
   }
 
-  const handleCall = () => {
-    callTracks(genreChoice);
-  }
+  // const handleCall = () => {
+  //   callTracks(genreChoice);
+  // }
 
   console.log("landing page genreChoice:", genreChoice)
   return(
@@ -57,7 +59,7 @@ const LandingPage = ({callTracks}: LandingPageProps) => {
         </select>
         <span className="focus"></span>
       </div>
-          {genreChoice && <button type="button" className="genre-select-button" onClick={handleCall}>VIBE</button>}
+          {genreChoice && <button type="button" className="genre-select-button" onClick={() => setGenre(genreChoice)}>VIBE</button>}
     </div>
   )
 }
