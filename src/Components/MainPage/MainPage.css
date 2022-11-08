@@ -1,51 +1,46 @@
 .mainPage {
-  width: 100vw;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 100vw;
 }
 
 .media {
-  width: 80vw;
   height: 20vh;
+  width: 80vw;
 }
 
 .randomSong-display {
-  margin: 0 5% 5% 5%;
+  align-items: center;
+  background-color: rgb(255, 255, 255, 0.75);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgb(255, 255, 255, 0.75);
-  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .5);
-  width: 80vw;
-  height: 60vh;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 60vh;
   justify-content: flex-start;
+  margin: 0 5% 5% 5%;
   overflow-y: scroll;
+  width: 80vw;
 }
 
 .nav {
   align-items: center;
+  background-color: teal;
+  border: 2px;
+  border-radius: 0.25em;
+  color: white;
   font-size: 1.2em;
   margin: 10px;
-  background-color: teal;
-  color: white;
-  border-radius: 0.25em;
-  border: 2px;
   outline: none;
-
 }
 
 .track-container {
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
-  grid-template-areas: 
-  '. artist . title . duration . button .';
-
   align-items: center;
+  display: grid;
+  grid-template-areas: ". artist . title . duration . button .";
+  grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
   height: 3rem;
 }
 
@@ -67,26 +62,26 @@
 }
 
 .add-to-queue-button {
-  height: 25px;
-  min-width: 100px;
-  margin: 10px;
   grid-area: button;
+  height: 25px;
+  margin: 10px;
+  min-width: 100px;
 }
 
 .album-grid {
-  width: 100vw;
-  height: 100vh;
-  height: inherit;
-  position: fixed;
-  z-index: -1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+  height: inherit;
   overflow-y: hidden;
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
 }
 
 .album-grid > span > img {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 .playlist-options {
@@ -96,7 +91,6 @@
   width: 118vh;
 }
 
-
 @media only screen and (max-width: 400px) {
   .album-grid {
     grid-template-columns: repeat(2 1fr);
@@ -105,7 +99,6 @@
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media only screen and (min-width: 400px) and (max-width: 600px) {
