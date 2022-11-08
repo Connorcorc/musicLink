@@ -10,9 +10,10 @@
   height: 20vh;
 }
 
-.randomSong {
-  margin: 5%;
-  border-radius: 10px;
+.randomSong-display {
+  margin: 0 5% 5% 5%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   background-color: rgb(255, 255, 255, 0.75);
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .5);
   width: 80vw;
@@ -26,7 +27,7 @@
   overflow-y: scroll;
 }
 
-.playist-options > .nav {
+.nav {
   align-items: center;
   font-size: 1.2em;
   margin: 10px;
@@ -86,6 +87,13 @@
 .album-grid > span > img {
   width: 100%;
   height: 100%;
+}
+
+.playlist-options {
+  background-color: rgb(255, 255, 255, 0.75);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 118vh;
 }
 
 
