@@ -18,9 +18,7 @@ const App = () => {
         setRandomTracks(data.results);
         navigate("/main");
       })
-      .catch((err) =>
-        console.log(err)
-      );
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -32,18 +30,10 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/"
-          element={<LandingPage setGenre={setGenre} />}
-        />
+        <Route path="/" element={<LandingPage setGenre={setGenre} />} />
         <Route
           path="/main"
-          element={
-            <MainPage
-              randomTracks={randomTracks}
-              setGenre={setGenre}
-            />
-          }
+          element={<MainPage randomTracks={randomTracks} setGenre={setGenre} />}
         />
       </Routes>
     </div>
