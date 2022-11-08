@@ -64,11 +64,11 @@ export const MainPage = ({randomTracks, genre, sortBy, setRandomTracks, setGenre
         <div className="album-grid">
           {showAlbumGrid}
         </div>
-          <AudioPlayer randomTracks={randomTracks} />
-        <div className="randomSong display">
-          <RefreshForm 
-            setGenre={setGenre}
-            setSortBy={setSortBy}/>
+        <AudioPlayer randomTracks={randomTracks} />
+        <RefreshForm 
+          setGenre={setGenre}
+          setSortBy={setSortBy}/>
+        <div className="randomSong-display">
           {tracks}
         </div>
       </main>
