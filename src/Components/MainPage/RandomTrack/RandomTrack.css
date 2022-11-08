@@ -1,10 +1,10 @@
 .track-container {
-    width: 100%;
     display: flex;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
     flex-direction: row;
     justify-content: space-between;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 100%;
 }
 
 h3 {
