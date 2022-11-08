@@ -11,6 +11,7 @@ const App = () => {
   // hooks for controlled form - let's user's sort through music by:
   //Relevance, Genre, Country
   const [genre, setGenre] = useState<string>("");
+  const [sortBy, setSortBy] = useState<string>('')
   const navigate = useNavigate();
 
   const callTracks = (genre: string) => {
@@ -44,8 +45,10 @@ const App = () => {
           <MainPage 
             randomTracks={randomTracks} 
             genre={genre}
+            sortBy={sortBy}
             setRandomTracks={setRandomTracks}
             setGenre={setGenre}
+            setSortBy={setSortBy}
             callTracks={callTracks}
           />
         }/>

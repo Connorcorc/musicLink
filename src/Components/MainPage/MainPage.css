@@ -1,24 +1,21 @@
 .mainPage {
   width: 100vw;
-  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
-.display {
-  border-radius: 10px;
-  background-color: rgb(255, 255, 255, 0.75);
-  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .5);
-}
-
-.player {
-  grid-area: player;
+.media {
+  width: 80vw;
+  height: 20vh;
 }
 
 .randomSong {
-  width: 60vw;
+  margin: 5%;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255, 0.75);
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .5);
+  width: 80vw;
   height: 60vh;
   border-radius: 10px;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
@@ -26,8 +23,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  overflow: auto;
-  grid-area: random;
+  overflow-y: scroll;
+}
+
+.playist-options > .nav {
+  align-items: center;
+  font-size: 1.2em;
+  margin: 10px;
+  background-color: teal;
+  color: white;
+  border-radius: 0.25em;
+  border: 2px;
+  outline: none;
+
 }
 
 .track-container {
@@ -66,13 +74,13 @@
 
 .album-grid {
   width: 100vw;
+  height: 100vh;
   height: inherit;
-  position: absolute;
+  position: fixed;
   z-index: -1;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   overflow-y: hidden;
-
 }
 
 .album-grid > span > img {
@@ -81,35 +89,35 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   .album-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2 1fr);
   }
   .mainPage {
     display: flex;
     flex-direction: column;
   }
-  .mainPage > .display {
-    margin: 5%;
-  }
 
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+  .album-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 800px) {
   .album-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .mainPage {
-    display: flex;
-    flex-direction: column;
-  }
-  .mainPage > .display {
-    margin: 5%;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 800px) {
   .album-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
