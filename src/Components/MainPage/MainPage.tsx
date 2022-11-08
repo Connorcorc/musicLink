@@ -12,10 +12,7 @@ type MainPageProps = {
   setGenre: (data: string) => void;
 };
 
-export const MainPage = ({
-  randomTracks,
-  setGenre,
-}: MainPageProps) => {
+export const MainPage = ({ randomTracks, setGenre }: MainPageProps) => {
   const [nowPlaying, setNowPlaying] = useState<string>("");
 
   const navigate = useNavigate();

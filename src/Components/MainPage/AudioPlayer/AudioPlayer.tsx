@@ -5,7 +5,7 @@ type AudioPLayerProps = {
   nowPlaying: string;
 };
 
-const AudioPlayer = ({ nowPlaying}: AudioPLayerProps) => {
+const AudioPlayer = ({ nowPlaying }: AudioPLayerProps) => {
   const [currentTrack, setCurrentTrack] = useState<string>(nowPlaying);
   const audioRef = useRef();
 
