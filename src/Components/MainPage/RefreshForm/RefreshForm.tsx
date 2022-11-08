@@ -4,7 +4,7 @@ type RefreshFormProps = {
   setGenre: (data: string) => void;
 };
 
-export const RefreshForm = ({ setGenre}: RefreshFormProps) => {
+export const RefreshForm = ({ setGenre }: RefreshFormProps) => {
   const [selectedGenre, setSelectedGenre] = useState<string>("");
 
   const newQuery = () => {

@@ -21,7 +21,6 @@ const RandomTrack = ({
   audio,
   setNowPlaying,
 }: RandomTrackProps) => {
-
   return (
     <div className="track-container">
       <input
