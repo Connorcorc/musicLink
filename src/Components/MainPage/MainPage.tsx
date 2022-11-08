@@ -14,7 +14,10 @@ type MainPageProps = {
 
 export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPageProps) => {
   const [queue, setQueue] = useState<JamObject[]>([]);
-  const [hasError, setError] = useState<string>("");
+  const [hasError, setError] = useState<string>('');
+  const [sortBy, setSortBy] = useState<string>('')
+  const [genre, setGenre] = useState<string>('')
+
   const navigate = useNavigate();
   const albumCovers: {image: string, id: string}[] = []
   
@@ -23,7 +26,6 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
     setQueue([...queue, trackToQueue!]);
   }
 
-  
   const tracks = randomTracks.map(randomTrack => {
     albumCovers.push({image: randomTrack.image, id: randomTrack.id})
     return (
@@ -38,41 +40,18 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
       /> 
     )
   })
+
+  const updatePlaylist = () => {
     
-  console.log(albumCovers);
-  
+    //fetch call w new params
+  }
+      
   const showAlbumGrid = albumCovers.map(albumCover => {
     return (
       <AlbumGrid key={albumCover.id} albumCover={albumCover.image} />
     )
   })
 
-  const queuedUp = queue.map(track => {
-    return (
-      <QueueTrack
-        id={track.id}
-        key={track.id}
-        artist={track.artist_name} 
-        title={track.name}
-        duration={track.duration} 
-        audio={track.audio} 
-      />
-    )
-  })
-
-  // const refreshRandomList = async (genre: string) => {
-  //   const url = `https://api.jamendo.com/v3.0/tracks/?client_id=3c243fb0&format=jsonpretty&limit=50&fuzzytags=${genre}&include=musicinfo&groupby=artist_id`
-  //   setError("");
-
-  //   try {
-  //     const response = await fetch(url)
-  //     const data = await response.json()
-  //     setRandomTracks(data.results)
-  //   } catch(error: any) {
-  //     setError(error.message)
-  //   }
-  // }
-  
   useEffect(() => {
     if (!randomTracks.length) {
       navigate("/")
@@ -91,20 +70,22 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
         <div className="randomSong display">
           <div className="playist-options">
           <label htmlFor="genres" className="hidden">Choose a genre:</label>
+        
         <select 
-          className="player-sort-selector"
-          // onChange={handleChange} 
+          className="player-sort nav"
+          onChange={event => setSortBy(event.target.value)} 
           name="sortSelect" 
           id="sort">
             <option value="">Sort by ▼</option>
             <option value="bestOf">Best Of</option>
             <option value="trending">Trending</option>
-            <option value="latest">Latests</option>
+            <option value="latest">Latest</option>
           </select>
+
           <select 
-          className="player-genre-selector"
-          // onChange={handleChange} 
-          name="genreSelect" 
+          className="player-genre nav"
+          onChange={event => setGenre(event.target.value)} 
+          name="genre" 
           id="genres">
             <option value="">Choose a genre ▼</option>
             <option value="pop">Pop</option>
@@ -128,24 +109,7 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
             <option value="blues">Blues</option>
           </select>
 
-          <select 
-          className="player-country-selector"
-          // onChange={handleChange} 
-          name="countrySelect" 
-          id="genres">
-            <option value="">Choose Country Of Origin ▼</option>
-            <option value="brazil">Brazil</option>
-            <option value="france">France</option>
-            <option value="germany">Germany</option>
-            <option value="italy">Italy</option>
-            <option value="poland">Poland</option>
-            <option value="russia">Russia</option>
-            <option value="spain">Spain</option>
-            <option value="ukraine">Ukraine</option>
-            <option value="united-kingdom">UK</option>
-            <option value="united-states-of-america">USA</option>
-          </select>
-
+          <button className="nav" type="button" onClick={updatePlaylist}>VIBE</button>
           </div>
         {tracks}
         </div>

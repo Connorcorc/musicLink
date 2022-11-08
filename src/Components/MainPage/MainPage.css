@@ -26,13 +26,16 @@
   overflow-y: scroll;
 }
 
-.playist-options > select {
+.playist-options > .nav {
   align-items: center;
   font-size: 1.2em;
   margin: 10px;
-  background-color: black;
+  background-color: teal;
   color: white;
   border-radius: 0.25em;
+  border: 2px;
+  outline: none;
+
 }
 
 .track-container {
