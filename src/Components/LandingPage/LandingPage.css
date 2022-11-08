@@ -19,12 +19,10 @@
     text-shadow: 0 5px 25px 0 rgba(0, 0, 0, .25);
 }
 
-select {
+.selector {
     appearance: none;
     display: block;
     padding: .25em .25em .25em .50em;
-    font-family: inherit;
-    font-size: inherit;
     outline: none;
     color: white;
     z-index: 1;

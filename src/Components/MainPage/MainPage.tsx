@@ -89,6 +89,64 @@ export const MainPage = ({randomTracks, setRandomTracks, callTracks}: MainPagePr
             <source src={randomTracks[0].audio} type="audio/mpeg"></source>
           </video>
         <div className="randomSong display">
+          <div className="playist-options">
+          <label htmlFor="genres" className="hidden">Choose a genre:</label>
+        <select 
+          className="player-sort-selector"
+          // onChange={handleChange} 
+          name="sortSelect" 
+          id="sort">
+            <option value="">Sort by ▼</option>
+            <option value="bestOf">Best Of</option>
+            <option value="trending">Trending</option>
+            <option value="latest">Latests</option>
+          </select>
+          <select 
+          className="player-genre-selector"
+          // onChange={handleChange} 
+          name="genreSelect" 
+          id="genres">
+            <option value="">Choose a genre ▼</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="electronic">Electronic</option>
+            <option value="hiphop">HipHop</option>
+            <option value="jazz">Jazz</option>
+            <option value="indie">Indie</option>
+            <option value="filmscore">FilmScore</option>
+            <option value="classical">Classical</option>
+            <option value="chillout">Chillout</option>
+            <option value="ambient">Ambient</option>
+            <option value="folk">Folk</option>
+            <option value="metal">Metal</option>
+            <option value="latin">Latin</option>
+            <option value="rnb">RNB</option>
+            <option value="reggae">Reggae</option>
+            <option value="punk">Punk</option>
+            <option value="country">Country</option>
+            <option value="house">House</option>
+            <option value="blues">Blues</option>
+          </select>
+
+          <select 
+          className="player-country-selector"
+          // onChange={handleChange} 
+          name="countrySelect" 
+          id="genres">
+            <option value="">Choose Country Of Origin ▼</option>
+            <option value="brazil">Brazil</option>
+            <option value="france">France</option>
+            <option value="germany">Germany</option>
+            <option value="italy">Italy</option>
+            <option value="poland">Poland</option>
+            <option value="russia">Russia</option>
+            <option value="spain">Spain</option>
+            <option value="ukraine">Ukraine</option>
+            <option value="united-kingdom">UK</option>
+            <option value="united-states-of-america">USA</option>
+          </select>
+
+          </div>
         {tracks}
         </div>
       </main>

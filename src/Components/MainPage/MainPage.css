@@ -26,6 +26,15 @@
   overflow-y: scroll;
 }
 
+.playist-options > select {
+  align-items: center;
+  font-size: 1.2em;
+  margin: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 0.25em;
+}
+
 .track-container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr 1fr 5fr 1fr;
