@@ -6,6 +6,7 @@ import { JamObject } from '../../types/JamObject'
 import AlbumGrid from "./AlbumGrid";
 import { RefreshForm } from "./RefreshForm/RefreshForm";
 import { useNavigate } from "react-router-dom";
+import AudioPlayer from "./AudioPlayer/AudioPlayer";
 
 type MainPageProps = {
   randomTracks: JamObject[],
@@ -43,12 +44,7 @@ export const MainPage = ({randomTracks, genre, sortBy, setRandomTracks, setGenre
         addToQueue={addToQueue}
       /> 
     )
-  })
-
-  const updatePlaylist = () => {
-    
-    //fetch call w new params
-  }
+  })  
 
   const showAlbumGrid = albumCovers.map(albumCover => {
     return (
@@ -68,10 +64,8 @@ export const MainPage = ({randomTracks, genre, sortBy, setRandomTracks, setGenre
         <div className="album-grid">
           {showAlbumGrid}
         </div>
-        <video controls className="media">
-            <source src={randomTracks[0].audio} type="audio/mpeg"></source>
-        </video>
-        <div className="randomSong display">+
+          <AudioPlayer randomTracks={randomTracks} />
+        <div className="randomSong display">
           <RefreshForm 
             setGenre={setGenre}
             setSortBy={setSortBy}/>

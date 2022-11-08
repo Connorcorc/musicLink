@@ -26,7 +26,7 @@
   overflow-y: scroll;
 }
 
-.playist-options > .nav {
+.nav {
   align-items: center;
   font-size: 1.2em;
   margin: 10px;
