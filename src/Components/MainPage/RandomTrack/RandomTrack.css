@@ -1,28 +1,28 @@
 .track-container {
-    display: flex;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 h3 {
-    font-size: .8rem;
-    margin-left: 1rem;
+  font-size: 0.8rem;
+  margin-left: 1rem;
 }
 
 p {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .playButton {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    height: 32px;
-    outline: none;
-    overflow: hidden;
-    width: 32px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  height: 32px;
+  outline: none;
+  overflow: hidden;
+  width: 32px;
 }
