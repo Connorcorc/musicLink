@@ -17,12 +17,12 @@ p {
 }
 
 .playButton {
-    height: 32px;
-    width: 32px;
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-    overflow: hidden;
+    height: 32px;
     outline: none;
+    overflow: hidden;
+    width: 32px;
 }
