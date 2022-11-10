@@ -81,8 +81,6 @@ We utilized testing to create a smooth user experience using [Cypress](https://w
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Reflections
 
 The project was very ambitious from the beginning. We intended to pull a short list of songs that could be previewed and added to a queue, while allowing the list to be updated with new songs. After getting into the code, we realized this was a bit more than we would be able to accomplish in the time given for the project, and decided to scale back to an app that allows you to select a type of music and retrieve a selection of 50 songs. 
