@@ -54,7 +54,7 @@ You can find the project [here](https://github.com/Connorcorc/musicLink) and fol
 
 1. Clone the repo
    ```sh
-   git clone GIT SSH CODE HERE
+   git clone git@github.com:Connorcorc/musicLink.git
    ```
 2. Install NPM packages
    ```sh
